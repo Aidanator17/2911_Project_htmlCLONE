@@ -1,88 +1,137 @@
 <!doctype html>
 
-<html  lang="en">
+<html lang="en">
 
 
-    <head>
+<head>
 
-        <link href="style/stylesheet.css" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-        <title>NOTE TAKING</title>
-        <meta charset="utf-8">
-        <script src="script/app.js" defer></script>
+    <link href="style/stylesheet.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <title>NOTE TAKING</title>
+    <meta charset="utf-8">
+    <script src="script/app.js" defer></script>
+    <script type="text/javascript">
+        /*Function for Play & Pause Buttons*/
+        function play() {
+            var videoPlayer = document.getElementById("videoPlayer");
+            var btnPlay = document.getElementById("btnPlay");
+            if (videoPlayer.paused) {
+                videoPlayer.play();
+                btnPlay.textContent = "||";
+            } else {
+                videoPlayer.pause();
+                btnPlay.textContent = ">";
+            }
+        }
+        /*Function to Reload video from Beginning*/
+        function reloadVideo() {
+            var videoPlayer = document.getElementById("videoPlayer");
+            videoPlayer.currentTime = 0;
+        }
+        /*Function to Forward & Rewind*/
+        function forwardRewind(param) {
+            var videoPlayer = document.getElementById("videoPlayer");
+            videoPlayer.currentTime += param;
+        }
+    </script>
 
-    </head>
+</head>
 
-    <body class="container">
+<body class="container">
 
-        <aside class="notes">
-            <h1>My Matches</h1>
+    <aside class="notes">
+        <h1>My Matches</h1>
 
-            <nav>
-                <ul id="listnotes">
-                    <li class="nt1">match one</li>
-                </ul>
+        <nav>
+            <ul id="listnotes">
+                <li class="nt1">match one</li>
+            </ul>
+        </nav>
+        <iframe width="280" height="150"
+            src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0"
+            allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
+        <figure>
+            <figcaption>Listen to the T-Rex:</figcaption>
+            <audio controls src="https://www.youtube.com/watch?v=adLGHcj_fmA">
+                Your browser does not support the
+                <code>audio</code> element.
+            </audio>
+        </figure>
+        <video id="videoPlayer">
+            <source src="laugh-vid.mp4" type="video/mp4" />
+        </video>
+        <!--Buttons for Video Player-->
+        <div id="playerButtons">
+            <button id="btnReload" onclick="reloadVideo();">[]</button>
+            <button id="btnRewind" onclick="forwardRewind(-7)">
+                <<< /button>
+                    <button id="btnPlay" onclick="play()">></button>
+                    <button id="btnForward" onclick="forwardRewind(7)">>></button>
+
+    </aside>
+
+    <footer>
+        <h2>Keep In Touch</h2>
+
+        <nav>
+            <a href="https://www.linkedin.com" title="LINKEDIN WEBSITE"><img
+                    src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_color-512.png"
+                    width="75" height="75"></a>
+
+            <a href="https://www.google.ca/" title="INTERNET"><img
+                    src="https://cdn0.iconfinder.com/data/icons/internet-line/512/Internet_Line-02-512.png" width="75"
+                    height="75"></a>
+        </nav>
+
+
+    </footer>
+
+    <main class="textbox">
+        <header>
+            <h1>Play better chess!</h1>
+
+            <nav class="alignR">
+                <a href="" title="link to about">About</a>
+
+                <a href="" title="link to docs">docs</a>
             </nav>
 
-        </aside>
+        </header>
 
-        <footer>
-            <h2>Keep In Touch</h2>
-
-            <nav>
-                <a href="https://www.linkedin.com" title="LINKEDIN WEBSITE" ><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_color-512.png" width="75" height="75"></a>
-
-                <a href="https://www.google.ca/" title="INTERNET" ><img src="https://cdn0.iconfinder.com/data/icons/internet-line/512/Internet_Line-02-512.png" width="75" height="75"></a>
-            </nav>
-
-
-        </footer>
-
-        <main class="textbox">
-            <header>
-                <h1>Play better chess!</h1>
-    
-                <nav class="alignR">
-                    <a href="" title="link to about" >About</a>
-                
-                    <a href="" title="link to docs">docs</a>
-                </nav>
-    
-            </header>
-
-            <div class="flex-new">
-                <button class="button new-button">
+        <div class="flex-new">
+            <button class="button new-button">
                 New match
-                </button>
+            </button>
 
-                <button class="button Dark-button" id="Drkbtn">
-                    Dark Theme
-                </button>
-            </div>
-            
+            <button class="button Dark-button" id="Drkbtn">
+                Dark Theme
+            </button>
+        </div>
 
-            <section>
-                <textarea class="note" name="note"rows="5" cols="70">Write Notes here</textarea>
-            </section>
 
-            <div class="alignR">
-                <button class="button save-button">
+        <section>
+            <textarea class="note" name="note" rows="5" cols="70">Write Notes here</textarea>
+        </section>
+
+        <div class="alignR">
+            <button class="button save-button">
                 Save
-                </button>
+            </button>
 
-                <button class="button cancel-button">
+            <button class="button cancel-button">
                 End match
-                </button>
-            </div>
+            </button>
+        </div>
 
-            
 
-        </main>
 
-        
+    </main>
 
-    </body>
+
+
+</body>
 
 
 </html>
