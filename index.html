@@ -11,30 +11,6 @@
     <title>NOTE TAKING</title>
     <meta charset="utf-8">
     <script src="script/app.js" defer></script>
-    <script type="text/javascript">
-        /*Function for Play & Pause Buttons*/
-        function play() {
-            var videoPlayer = document.getElementById("videoPlayer");
-            var btnPlay = document.getElementById("btnPlay");
-            if (videoPlayer.paused) {
-                videoPlayer.play();
-                btnPlay.textContent = "||";
-            } else {
-                videoPlayer.pause();
-                btnPlay.textContent = ">";
-            }
-        }
-        /*Function to Reload video from Beginning*/
-        function reloadVideo() {
-            var videoPlayer = document.getElementById("videoPlayer");
-            videoPlayer.currentTime = 0;
-        }
-        /*Function to Forward & Rewind*/
-        function forwardRewind(param) {
-            var videoPlayer = document.getElementById("videoPlayer");
-            videoPlayer.currentTime += param;
-        }
-    </script>
 
 </head>
 
@@ -48,28 +24,10 @@
                 <li class="nt1">match one</li>
             </ul>
         </nav>
-        <iframe width="280" height="150"
-            src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0"
-            allow="autoplay; encrypted-media" allowfullscreen>
-        </iframe>
-        <figure>
-            <figcaption>Listen to the T-Rex:</figcaption>
-            <audio controls src="https://www.youtube.com/watch?v=adLGHcj_fmA">
-                Your browser does not support the
-                <code>audio</code> element.
-            </audio>
-        </figure>
-        <video id="videoPlayer">
-            <source src="laugh-vid.mp4" type="video/mp4" />
-        </video>
-        <!--Buttons for Video Player-->
-        <div id="playerButtons">
-            <button id="btnReload" onclick="reloadVideo();">[]</button>
-            <button id="btnRewind" onclick="forwardRewind(-7)">
-                <<< /button>
-                    <button id="btnPlay" onclick="play()">></button>
-                    <button id="btnForward" onclick="forwardRewind(7)">>></button>
-
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YrcyW38bUVI" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
     </aside>
 
     <footer>
