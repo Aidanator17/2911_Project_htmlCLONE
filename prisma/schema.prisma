@@ -9,3 +9,13 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+model Match {
+  playercolor String @id
+  AIcolor     String
+  moves       String[]
+  winner      String
+  played      String
+
+  @@map(name: "matches")
+}
