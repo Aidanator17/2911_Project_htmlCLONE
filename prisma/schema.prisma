@@ -11,7 +11,9 @@ generator client {
 }
 
 model Match {
-  playercolor String @id
+  match_id    String @id @default(uuid())
+  playername  String @default("unknown")
+  playercolor String
   AIcolor     String
   moves       String[]
   winner      String
