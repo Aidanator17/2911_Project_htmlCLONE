@@ -4,6 +4,9 @@ const path = require("path");
 const port = process.env.PORT || 8000;
 const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
+const fetch = require('node-fetch');
+let sites = ['https://chessresults.herokuapp.com', 'http://localhost:8000']
+let sitenum = 1
 
 const app = express();
 
@@ -32,11 +35,18 @@ app.use(express.urlencoded({ extended: true }));
 //   next();
 // });
 
-app.get("/", (req,res) => {
-    res.render("index")
+app.get("/", (req, res) => {
+
+  fetch(sites[sitenum] + '/matchdb').then(function (res) {
+    return res.text();
+  }).then(function (body) {
+    matches = JSON.parse(body)
+    res.render("index", {matches})
+  })
+
 })
 
-app.get("/matchdb", async (req,res) => {
+app.get("/matchdb", async (req, res) => {
   try {
     const matches = await prisma.match.findMany()
     return res.json(matches)

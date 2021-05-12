@@ -18,8 +18,8 @@
 
     <aside class="notes">
         <h1>Music</h1>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/YrcyW38bUVI?&autoplay=1" title="YouTube video player"
-            frameborder="0"
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YrcyW38bUVI?&autoplay=1"
+            title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
     </aside>
@@ -76,8 +76,18 @@
                 End match
             </button>
         </div> -->
-        <h2>Recent Matches:</h2>
-
+            <h2>Recent Matches:</h2>
+            <% for (match in matches) { if (matches[match].winner=="AI" ){ %>
+                <h4>
+                    <%= matches[match].winner %> (<%= matches[match].AIcolor %>) defeated <%= matches[match].playername
+                                %> (<%= matches[match].playercolor %>) in <%= matches[match].time %> seconds!
+                </h4>
+                <% } else{ %>
+                    <h4>
+                        <%= matches[match].playername %> (<%= matches[match].playercolor %>) defeated the AI (<%=
+                                    matches[match].AIcolor %>) in <%= matches[match].time %> seconds!
+                    </h4>
+                    <% } } %>
 
 
     </main>
