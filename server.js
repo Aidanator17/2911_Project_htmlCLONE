@@ -2,6 +2,8 @@ const express = require("express");
 const session = require("express-session");
 const path = require("path");
 const port = process.env.PORT || 8000;
+const { PrismaClient } = require('@prisma/client')
+const prisma = new PrismaClient()
 
 const app = express();
 
@@ -32,6 +34,15 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req,res) => {
     res.render("index")
+})
+
+app.get("/matchdb", async (req,res) => {
+  try {
+    const matches = await prisma.match.findMany()
+    return res.json(matches)
+  } catch (err) {
+    return res.status(500).json({ error: String(err) })
+  }
 })
 
 app.listen(port, () => {
