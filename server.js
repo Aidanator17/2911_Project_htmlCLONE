@@ -6,7 +6,7 @@ const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
 const fetch = require('node-fetch');
 let sites = ['https://chessresults.herokuapp.com', 'http://localhost:8000']
-let sitenum = 1
+let sitenum = 0
 
 const app = express();
 
