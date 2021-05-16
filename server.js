@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
     return res.text();
   }).then(function (body) {
     matches = JSON.parse(body)
-    res.render("index", {matches})
+    res.render("index", { matches })
   })
 
 })
@@ -53,6 +53,21 @@ app.get("/matchdb", async (req, res) => {
   } catch (err) {
     return res.status(500).json({ error: String(err) })
   }
+})
+
+app.get("/match/:id", async (req, res) => {
+  fetch(sites[sitenum] + '/matchdb').then(function (res) {
+    return res.text();
+  }).then(function (body) {
+    matches = JSON.parse(body)
+    let smatch
+    for (i in matches){
+      if (matches[i].match_id == req.params.id){
+        smatch = matches[i]
+      }
+    }
+    res.render("match", { match:smatch })
+  })
 })
 
 app.listen(port, () => {
