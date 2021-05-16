@@ -74,12 +74,25 @@ footer{
     background-color: rgb(196, 68, 45);
 }
 
+#matchcontainer{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.matchlink {
+    text-decoration: none;
+    color: black;
+}
+.matchlink:hover {
+    font-weight: bolder;
+}
+
 @media only screen and (max-width:374){
     html{
         width: 100%;
         height: 50%;
     }
 }
+
 
 
 

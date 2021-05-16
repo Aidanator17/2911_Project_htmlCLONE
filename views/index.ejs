@@ -78,13 +78,13 @@
         </div> -->
             <h2>Recent Matches:</h2>
             <% for (match in matches) { if (matches[match].winner=="AI" ){ %>
-                <h4><a href="<%= " /match/"+matches[match].match_id %>">
+                <h4><a class="matchlink" href="<%= " /match/"+matches[match].match_id %>">
                         <%= matches[match].winner %> (<%= matches[match].AIcolor %>) defeated <%=
                                     matches[match].playername %> (<%= matches[match].playercolor %>) in <%=
                                             matches[match].time %> seconds!
                     </a></h4>
                 <% } else{ %>
-                    <h4><a href="<%= " /match/"+matches[match].match_id %>">
+                    <h4><a class="matchlink" href="<%= " /match/"+matches[match].match_id %>">
                             <%= matches[match].playername %> (<%= matches[match].playercolor %>) defeated the AI (<%=
                                         matches[match].AIcolor %>) in <%= matches[match].time %> seconds!
                         </a></h4>
