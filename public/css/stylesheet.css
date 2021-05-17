@@ -86,10 +86,10 @@ footer{
 }
 .matchlink {
     text-decoration: none;
-    color: black;
+    color: #555169;
 }
 .matchlink:hover {
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 @media only screen and (max-width:374){
