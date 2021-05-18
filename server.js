@@ -6,7 +6,7 @@ const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
 const fetch = require('node-fetch');
 let sites = ['https://chessresults.herokuapp.com', 'http://localhost:8000']
-let sitenum = 0
+let sitenum = 1
 
 const app = express();
 
@@ -40,7 +40,8 @@ app.get("/", (req, res) => {
   fetch(sites[sitenum] + '/matchdb').then(function (res) {
     return res.text();
   }).then(function (body) {
-    matches = JSON.parse(body)
+    let matchesr = JSON.parse(body)
+    let matches = matchesr.reverse()
     res.render("index", { matches })
   })
 

@@ -24,64 +24,17 @@
             allowfullscreen></iframe>
     </aside>
 
-    <!-- <footer>
-        <h2>Keep In Touch</h2>
-
-        <nav>
-            <a href="https://www.linkedin.com" title="LINKEDIN WEBSITE"><img
-                    src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_color-512.png"
-                    width="75" height="75"></a>
-
-            <a href="https://www.google.ca/" title="INTERNET"><img
-                    src="https://cdn0.iconfinder.com/data/icons/internet-line/512/Internet_Line-02-512.png" width="75"
-                    height="75"></a>
-        </nav>
-
-
-    </footer> -->
-
     <main class="textbox">
         <header>
             <h1>Chess? Chess.</h1>
 
-            <!-- <nav class="alignR">
-                <a href="" title="link to about">About</a>
-
-                <a href="" title="link to docs">docs</a>
-            </nav>
-
-        </header>
-
-        <div class="flex-new">
-            <button class="button new-button">
-                New match
-            </button>
-
-            <button class="button Dark-button" id="Drkbtn">
-                Dark Theme
-            </button>
-        </div>
-
-
-        <section>
-            <textarea class="note" name="note" rows="5" cols="70">Write Notes here</textarea>
-        </section>
-
-        <div class="alignR">
-            <button class="button save-button">
-                Save
-            </button>
-
-            <button class="button cancel-button">
-                End match
-            </button>
-        </div> -->
             <div id="matchcontainer">
                 <div>
                     <h2>Match ID: <%= match.match_id %>
                     </h2>
                     <h3>Player: <%= match.playername %>
                     </h3>
+                    <h3>Colour: <%= match.playercolor %></h3>
                     <h3>Time: <%= match.time %> seconds</h3>
                     <% if (match.winner=='player' ){ %>
                         <h3>Winner: <%= match.playername %> (<%= match.winner %>)</h3>
