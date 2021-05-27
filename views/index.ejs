@@ -21,24 +21,33 @@
         <iframe width="280" height="158" src="https://www.youtube.com/embed/YrcyW38bUVI?&autoplay=1"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe><br>
+        <iframe width="280" height="158" src="https://www.youtube.com/embed/-IYezXpSFVI" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe><br>
+        <iframe width="280" height="158" src="https://www.youtube.com/embed/7SrJb-jdQao" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
     </aside>
 
     <main class="textbox">
         <header>
-            <h1>Chess? Chess.</h1>
+            <h1><img src="/images/logo.png" width="300" alt=""></h1>
 
             <h2>Recent Matches:</h2>
             <% for (match in matches) { if (matches[match].winner=="AI" ){ %>
                 <p style="font-size: 1.2em;"><a class="matchlink" href="<%= " /match/"+matches[match].match_id %>">
-                        <%= matches[match].played %> - <%= matches[match].winner %> (<%= matches[match].AIcolor %>) defeated <%=
-                                    matches[match].playername %> (<%= matches[match].playercolor %>) in <%=
-                                            matches[match].time %> seconds!
+                        <%= matches[match].played %> - <%= matches[match].winner %> (<%= matches[match].AIcolor %>)
+                                    defeated <%= matches[match].playername %> (<%= matches[match].playercolor %>) in <%=
+                                                matches[match].time %> seconds!
                     </a></p>
                 <% } else{ %>
                     <p style="font-size: 1.2em;"><a class="matchlink" href="<%= " /match/"+matches[match].match_id %>">
-                        <%= matches[match].played %> - <%= matches[match].playername %> (<%= matches[match].playercolor %>) defeated the AI (<%=
-                                        matches[match].AIcolor %>) in <%= matches[match].time %> seconds!
+                            <%= matches[match].played %> - <%= matches[match].playername %> (<%=
+                                        matches[match].playercolor %>) defeated the AI (<%= matches[match].AIcolor %>)
+                                            in <%= matches[match].time %> seconds!
                         </a></p>
                     <% } } %>
 

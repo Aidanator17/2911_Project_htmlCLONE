@@ -18,15 +18,23 @@
 
     <aside class="notes">
         <h1>Music</h1>
-        <iframe width="280" height="158" src="https://www.youtube.com/embed/YrcyW38bUVI?"
+        <iframe width="280" height="158" src="https://www.youtube.com/embed/YrcyW38bUVI?&autoplay=1"
             title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe><br>
+        <iframe width="280" height="158" src="https://www.youtube.com/embed/-IYezXpSFVI" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe><br>
+        <iframe width="280" height="158" src="https://www.youtube.com/embed/7SrJb-jdQao" title="YouTube video player"
+            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
     </aside>
 
     <main class="textbox">
         <header>
-            <h1>Chess? Chess.</h1>
+            <h1><img src="/images/logo.png" width="300" alt=""></h1>
 
             <div id="matchcontainer">
                 <div>
@@ -45,9 +53,10 @@
                 </div>
                 <div>
                     <h2>Moves:</h2>
+                    <div id="moves">
                     <% for (move in match.moves){ %> 
                         <h4><%= match.moves[move] %></h4>
-                        <% } %> 
+                        <% } %> </div>
                 </div>
 
             </div>
